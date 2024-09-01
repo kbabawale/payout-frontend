@@ -22,7 +22,7 @@ export async function processLogin(prevState: any, formData: FormData) {
       };
     }
 
-    const res = await fetch("http://localhost:3000/api/v1/payout/login", {
+    const res = await fetch(`${process.env.API_HOST}/payout/login`, {
       method: "POST",
       body: JSON.stringify(rawFormData),
       headers: {

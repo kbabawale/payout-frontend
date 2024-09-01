@@ -12,7 +12,7 @@ export const fetchBanks = async () => {
 
     const accessToken = JSON.parse(user).access_token;
 
-    const res = await fetch("http://localhost:3000/api/v1/payout/bank", {
+    const res = await fetch(`${process.env.API_HOST}/payout/bank`, {
       headers: {
         Authorization: `Bearer ${accessToken}`,
         "Content-Type": "application/json",

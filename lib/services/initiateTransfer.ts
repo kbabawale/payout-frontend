@@ -42,7 +42,7 @@ export const processInitiateTransfer = async (
 
     const payload = { ...rawFormData, userId: JSON.parse(user).id };
 
-    const res = await fetch("http://localhost:3000/api/v1/payout/initiate", {
+    const res = await fetch(`${process.env.API_HOST}/payout/initiate`, {
       method: "POST",
       body: JSON.stringify(payload),
       headers: {

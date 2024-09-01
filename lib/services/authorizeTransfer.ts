@@ -36,7 +36,7 @@ export const processAuthorizeTransfer = async (
 
     const payload = { ...rawFormData, userId: JSON.parse(user).id };
 
-    const res = await fetch("http://localhost:3000/api/v1/payout/transfer", {
+    const res = await fetch(`${process.env.API_HOST}/payout/transfer`, {
       method: "POST",
       body: JSON.stringify(payload),
       headers: {
